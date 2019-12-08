@@ -1,4 +1,4 @@
-package com.kotlin.todo.domain
+package com.kotlin.todo.domain.todo
 
 import java.time.LocalDateTime
 import javax.persistence.*
