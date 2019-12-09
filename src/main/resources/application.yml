@@ -1,8 +1,6 @@
 spring:
   profiles:
     active: dev
-  jpa:
-    show-sql: true
   main:
     allow-bean-definition-overriding: true
 

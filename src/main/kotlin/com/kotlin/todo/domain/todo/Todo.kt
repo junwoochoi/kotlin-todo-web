@@ -1,21 +1,15 @@
 package com.kotlin.todo.domain.todo
 
+import org.springframework.data.annotation.Id
+import org.springframework.data.relational.core.mapping.Table
 import java.time.LocalDateTime
-import javax.persistence.*
 
-@Entity
-class Todo {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long = 0
-    @Lob
-    @Column(name = "content")
-    var content: String? = null
-    @Column(name = "done")
-    var done: Boolean = false
-    @Column(name = "created_at")
-    var createdAt: LocalDateTime = LocalDateTime.now()
-    @Column(name = "modifed_at")
-    var modifedAt: LocalDateTime = createdAt
-
-}
+@Table("todos")
+data class Todo(
+        @Id
+        var id: Long? = null,
+        var content: String? = null,
+        var done: Boolean = false,
+        var createdAt: LocalDateTime = LocalDateTime.now(),
+        var modifiedAt: LocalDateTime = createdAt
+)
